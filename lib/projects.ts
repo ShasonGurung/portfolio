@@ -24,6 +24,8 @@ export type Project = {
 };
 
 export function getProjects(): Project[] {
+  if (!fs.existsSync(directory)) return [];
+
   return fs.readdirSync(directory)
     .filter((file) => file.endsWith(".md"))
     .map((file) => {

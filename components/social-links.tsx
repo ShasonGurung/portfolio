@@ -13,7 +13,7 @@ type SocialLink = {
 };
 
 const baseLinkClass =
-  "inline-flex items-center gap-2 border-b border-[var(--accent)] pb-0.5 text-[var(--text)] transition-colors hover:text-[var(--accent)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]";
+  "inline-flex size-10 items-center justify-center rounded-full text-(--muted) transition-colors hover:bg-(--hover) hover:text-(--accent) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)";
 
 const socialLinks: SocialLink[] = [
   { href: "/work/", label: "Projects", icon: FiFolder },
@@ -40,10 +40,7 @@ export function SocialLinks({ className = "" }: SocialLinksProps) {
     >
       {socialLinks.map(({ href, label, icon: Icon, external }) => {
         const content = (
-          <>
-            <Icon aria-hidden="true" className="size-4" />
-            {label}
-          </>
+          <Icon aria-hidden="true" className="size-5" />
         );
 
         if (external) {
@@ -52,6 +49,7 @@ export function SocialLinks({ className = "" }: SocialLinksProps) {
               key={label}
               href={href}
               aria-label={label}
+              title={label}
               target="_blank"
               rel="noopener noreferrer"
               className={baseLinkClass}
@@ -66,6 +64,7 @@ export function SocialLinks({ className = "" }: SocialLinksProps) {
             key={label}
             href={href}
             aria-label={label}
+            title={label}
             className={baseLinkClass}
           >
             {content}

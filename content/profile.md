@@ -1,4 +1,4 @@
 ---
 heading: Hi, I'm Shason.
-intro: I am a Software Engineer within the Digital Research Service team at the University of Nottingham.
+intro: I'm a software engineer with the Digital Research Service at the University of Nottingham.
 ---
