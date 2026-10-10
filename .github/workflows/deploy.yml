@@ -25,7 +25,7 @@ jobs:
           cache: npm
       - uses: actions/configure-pages@v5
       - run: npm ci
-      - run: npm run build
+      - run: npm run build -- --webpack
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ vars.NEXT_PUBLIC_BASE_PATH }}
       - uses: actions/upload-pages-artifact@v4
